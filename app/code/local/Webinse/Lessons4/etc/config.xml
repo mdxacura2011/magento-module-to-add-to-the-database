@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Webinse_Lessons4>
+            <version>0.4.0</version>
+        </Webinse_Lessons4>
+    </modules>
+
+    <global>
+
+        <blocks>
+            <lessons4>
+                <class>Webinse_Lessons4_Block</class>
+            </lessons4>
+        </blocks>
+
+        <helpers>
+            <lessons4><class>Webinse_Lessons4_Helper</class></lessons4>
+        </helpers>
+
+        <models>
+            <lessons4>
+                <class>Webinse_Lessons4_Model</class>
+                <resourceModel>lessons4_resource</resourceModel>
+            </lessons4>
+            <lessons4_resource>
+                <class>Webinse_Lessons4_Model_Resource</class>
+                <entities>
+                    <faq>
+                        <table>webinse_faq2</table>
+                    </faq>
+                </entities>
+            </lessons4_resource>
+        </models>
+
+     <resources>
+        <lessons4_write>
+            <connection>
+                <use>core_write</use>
+            </connection>
+        </lessons4_write>
+        <lessons4_read>
+            <connection>
+                <use>core_read</use>
+            </connection>
+        </lessons4_read>
+
+	 <lessons4_setup>
+		<setup>
+			<module>Webinse_Lessons4</module>
+			<class>Webinse_Lessons4_Model_Resource_Setup</class>
+		</setup>
+		<connection>
+			<use>core_setup</use>
+		</connection>
+	</lessons4_setup>
+
+    </resources>
+
+    </global>
+
+    <frontend>
+	    <routers>
+		<lessons4>
+		    <use>standard</use>
+		    <args>
+		        <module>Webinse_Lessons4</module>
+		        <frontName>lessons4</frontName>
+		    </args>
+		</lessons4>
+	    </routers>
+		<layout>
+			<updates>
+				<lessons4>
+					<file>webinse4/faq.xml</file>
+				</lessons4>
+			</updates>
+		</layout>
+	</frontend>
+
+	<adminhtml>    
+        <layout>
+            <updates>
+                <lessons4>
+                    <file>webinse/lessons4.xml</file>
+                </lessons4>
+            </updates>
+        </layout>
+    </adminhtml>
+   <admin>
+        <routers>
+             <adminhtml>
+                 <args>
+                     <modules>
+                         <lessons4 before="Mage_Adminhtml">Webinse_Lessons4_Adminhtml</lessons4>
+                     </modules>
+                 </args>
+             </adminhtml>
+        </routers>
+    </admin>
+</config>

@@ -1,0 +1,60 @@
+<head>
+<style type="text/css">
+a.cite {
+border: 1px solid #636363;
+display: inline-block;
+padding: 5px 15px;
+text-decoration: none;
+color: #3399cc;
+margin-top: 10px;
+}
+a.cite:hover {
+box-shadow: 0 0 5px rgba(0,0,0,0.3);
+background: linear-gradient(to bottom, #fcfff4, #e9e9ce);
+color: #3399cc;
+}
+table {
+width: 500px;
+}
+td, th {
+padding: 5px;
+text-align: center;
+}
+
+th{
+font-weight: bold;
+}
+</style>
+</head>
+<?php
+/**
+ * @var Webinse_Lessons4_Block_Faq
+ */
+?>
+<?php $helper     = Mage::helper('lessons4'); ?>
+<?php $collection = $this->getAllFaq(); ?>
+
+<table border="1">
+	<h2><?php echo $helper->__('Frequently Asked Questions'); ?></h2>	
+<tr>
+<th>Answer</th>
+<th>Question</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
+<?php if ($collection->getSize()): ?>
+<?php foreach ($collection as $val): ?>
+<tr>
+<td><?php echo $val -> getAnswer(); ?></td>
+<td><?php echo $val -> getQuestion(); ?></td>
+
+<td><a href="<?php echo Mage::getUrl('lessons4/index/editfaq') . '?id=' . $val->getId(); ?>">Edit</a></td>
+<td><a href="<?php echo Mage::getUrl('lessons4/index/delete') . '?id=' . $val->getId(); ?>">Delete</a></td>
+</tr>
+<?php endforeach; ?>
+</table>
+<div>
+	<a class="cite" href="<?php echo Mage::getUrl('lessons4/index/addfaq'); ?>">Add</a>
+</div>
+<?php endif; ?>
+

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Webinse_Lessons4>
+            <active>true</active>      
+            <codePool>local</codePool>
+        </Webinse_Lessons4>
+    </modules>
+</config>

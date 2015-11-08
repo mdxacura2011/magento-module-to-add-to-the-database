@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_lessons4_index>
+        <reference name="content">
+            <block type="lessons4/adminhtml_lessons4" name="lessons4"></block>
+        </reference>
+    </adminhtml_lessons4_index>
+<adminhtml_lessons4_edit>
+        <reference name="content">
+            <block type="lessons4/adminhtml_lessons4_edit" name="lessons4"></block>
+        </reference>
+    </adminhtml_lessons4_edit>
+</layout>
